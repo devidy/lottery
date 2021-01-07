@@ -1,0 +1,17 @@
+{
+    "name": "devidy/lottery",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "devidy",
+            "email": "devidy.oliveira@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\Lottery\\": "src/"
+        }
+    }
+}

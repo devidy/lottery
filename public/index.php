@@ -8,3 +8,4 @@ $lottery = new Lottery(3, 6);
 
 var_dump($lottery->getTotalGames()); 
 var_dump($lottery->getQuantityTens()); 
+var_dump($lottery->generateBet());

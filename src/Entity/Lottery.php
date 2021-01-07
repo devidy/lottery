@@ -2,8 +2,12 @@
 
 namespace App\Lottery\Entity;
 
+use App\Lottery\Traits\RaffleTrait;
+
 class Lottery
 {
+    use RaffleTrait;
+
     /**
      * @var int
      */
@@ -116,6 +120,16 @@ class Lottery
     public function getGames()
     {
         return $this->games;
+    }
+
+    /**
+     * Cria a aposta
+     *
+     * @return array
+     */
+    private function generateBet()
+    {
+        return $this->generatesRandomNumbers($this->quantityTens);
     }
 
 }

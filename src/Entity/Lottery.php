@@ -123,6 +123,23 @@ class Lottery
     }
 
     /**
+     * Cria o array de apostas
+     * 
+     * @return array
+     */
+    public function generateGames()
+    {
+        $bet = [];
+
+        for ($i=0; $i < $this->totalGames; $i++) { 
+            $bet[] = $this->generateBet();
+        }
+
+        $this->setGames($bet);
+    }
+
+
+    /**
      * Cria a aposta
      *
      * @return array

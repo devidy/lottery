@@ -149,4 +149,13 @@ class Lottery
         return $this->generatesRandomNumbers($this->quantityTens);
     }
 
+    /**
+     * obtem o resultado do sorteio
+     * 
+     * @return void
+     */
+    public function lotteryRaffle()
+    {
+        $this->setResult($this->generatesRandomNumbers(6));
+    }
 }

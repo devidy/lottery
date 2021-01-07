@@ -158,4 +158,61 @@ class Lottery
     {
         $this->setResult($this->generatesRandomNumbers(6));
     }
+
+    /**
+     * Monta html com a tabela para exibir os resultados
+     *
+     * @return string
+     */
+    public function showResult()
+    {
+        return "<table border='1'>
+                    <thead>
+                        <tr>
+                            <th style='text-align: center' colspan='4'>LOTERIA</th>
+                        </tr>
+                        <tr>
+                            <td  style='text-align: center' colspan='4'>Dezenas Sorteadas:" .implode(", ", $this->getResult())."</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan='2'>Dezenas</td>
+                            <td style='text-align: center;'>Acertos</td>
+                            <td style='text-align: center;'>Quantidade de acertos</td>
+                        </tr>
+                        ". $this->buildColumns() ."
+                    </tbody>
+                </table>";
+    }
+
+    /**
+     * 
+     *
+     * @return string
+     */
+    public function buildColumns()
+    {
+        $htmlColumns = "";
+
+        foreach ($this->games as $jogo) {
+            $htmlColumns .= "<tr>
+                        <td colspan='2'>".implode(", ", $jogo)."</td>
+                        <td style='text-align: center;'>".count($this->getBettingResult($jogo))."</td>
+                        <td style='text-align: center;'>".implode(", ", $this->getBettingResult($jogo))."</td>
+                    </tr>";
+        }
+
+        return $htmlColumns;
+    }
+
+    /**
+     * Confere o resultado das apostas
+     * @param array $game
+     * @return array
+     */
+    public function getBettingResult($game)
+    {
+        return array_intersect($this->getResult(), $game);
+    }
 }

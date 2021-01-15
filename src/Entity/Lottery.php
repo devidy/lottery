@@ -150,7 +150,7 @@ class Lottery
     }
 
     /**
-     * obtem o resultado do sorteio
+     * seta o resultado do sorteio
      * 
      * @return void
      */
@@ -195,11 +195,11 @@ class Lottery
     {
         $htmlColumns = "";
 
-        foreach ($this->games as $jogo) {
+        foreach ($this->games as $game) {
             $htmlColumns .= "<tr>
-                        <td colspan='2'>".implode(", ", $jogo)."</td>
-                        <td style='text-align: center;'>".count($this->getBettingResult($jogo))."</td>
-                        <td style='text-align: center;'>".implode(", ", $this->getBettingResult($jogo))."</td>
+                        <td colspan='2'>".implode(", ", $game)."</td>
+                        <td style='text-align: center;'>".count($this->getBettingResult($game))."</td>
+                        <td style='text-align: center;'>".implode(", ", $this->getBettingResult($game))."</td>
                     </tr>";
         }
 

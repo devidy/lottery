@@ -123,7 +123,7 @@ class Lottery
     }
 
     /**
-     * Cria o array de apostas
+     * Cria as apostas de acordo com a quantidade de jogos informado
      * 
      * @return array
      */
@@ -140,7 +140,7 @@ class Lottery
 
 
     /**
-     * Cria a aposta
+     * Cria a aposta de acordo com a quantidade de dezenas informada
      *
      * @return array
      */
@@ -187,7 +187,7 @@ class Lottery
     }
 
     /**
-     * 
+     * Monta as colunas de acordo com a quantidade de apostas feitas
      *
      * @return string
      */

@@ -3,10 +3,13 @@ use App\Lottery\Entity\Lottery;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+try {
+    $lottery = new Lottery(1, 3);
 
-$lottery = new Lottery(3, 6);
+    $lottery->generateGames();
+    $lottery->lotteryRaffle();
 
-$lottery->generateGames();
-$lottery->lotteryRaffle();
-
-echo $lottery->showResult();
+    echo $lottery->showResult();
+} catch (Exception $e) {
+    echo $e->getMessage(), "\n";
+}

@@ -177,9 +177,9 @@ class Lottery
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan='2'>Dezenas</td>
-                            <td style='text-align: center;'>Acertos</td>
+                            <td colspan='2'>Aposta</td>
                             <td style='text-align: center;'>Quantidade de acertos</td>
+                            <td style='text-align: center;'>Acertos</td>
                         </tr>
                         ". $this->buildColumns() ."
                     </tbody>

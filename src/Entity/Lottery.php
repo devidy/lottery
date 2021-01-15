@@ -28,6 +28,12 @@ class Lottery
      */
     private $games;
 
+    /**     
+     * 
+     * @var array
+     */
+    private $quantityTensDrawn;
+
     /**
      * Create a new lottery instance.
      * 
@@ -44,6 +50,7 @@ class Lottery
         
         $this->setTotalGames($totalGames);
         $this->setQuantityTens($quantityTens);
+        $this->setQuantityTensDrawn(6);
     }
 
     /**
@@ -122,6 +129,27 @@ class Lottery
         return $this->games;
     }
 
+
+    /**
+     * 
+     * @param int $quantityTensDrawn
+     * @return void
+     */
+    public function setQuantityTensDrawn($quantityTensDrawn)
+    {
+        $this->quantityTensDrawn = $quantityTensDrawn;
+    }
+
+    /**
+     * 
+     * @return int
+     */
+    public function getQuantityTensDrawn()
+    {
+        return $this->quantityTensDrawn;
+    }
+
+
     /**
      * Cria as apostas de acordo com a quantidade de jogos informado
      * 
@@ -142,11 +170,11 @@ class Lottery
     /**
      * Cria a aposta de acordo com a quantidade de dezenas informada
      *
-     * @return array
+     * @return arrays
      */
     private function generateBet()
     {
-        return $this->generatesRandomNumbers($this->quantityTens);
+        return $this->generatesRandomNumbers($this->getQuantityTens());
     }
 
     /**
@@ -156,7 +184,7 @@ class Lottery
      */
     public function lotteryRaffle()
     {
-        $this->setResult($this->generatesRandomNumbers(6));
+        $this->setResult($this->generatesRandomNumbers($this->getQuantityTensDrawn()));
     }
 
     /**
